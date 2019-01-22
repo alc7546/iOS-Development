@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
 //  Hello RIT (v2)
-// Running 9.2 xCode
-//
+//  Running 9.2 xCode
+//  Performs Simple Animations
 //  Created by Andrew Clark (RIT Student) on 1/22/19.
 //  Copyright © 2019 Andrew Clark. All rights reserved.
 //
