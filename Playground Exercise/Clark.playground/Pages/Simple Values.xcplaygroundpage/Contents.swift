@@ -24,6 +24,8 @@ let implicitInteger = 70
 let implicitDouble = 70.0
 let explicitDouble: Double = 70
 
+// EXPERIMENT
+let experimentFloat: Float = 4;
 //: - Experiment:
 //: Create a constant with an explicit type of `Float` and a value of `4`.
 //:
@@ -32,7 +34,7 @@ let explicitDouble: Double = 70
 let label = "The width is "
 let width = 94
 let widthLabel = label + String(width)
-
+// You get the error "Binary operator '+' cannot be applied to operands of type "String" and "Int" when removing string
 //: - Experiment:
 //: Try removing the conversion to `String` from the last line. What error do you get?
 //:
@@ -40,9 +42,13 @@ let widthLabel = label + String(width)
 //:
 let apples = 3
 let oranges = 5
+let piecesOfPineapple: Float = 4.5
+let name = "Bob"
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 
+// EXPERIMENT
+let fruitMathGreeting = "I add 3 apples and 4.5 pieces of pineapple together to get \(Float(apples) + (piecesOfPineapple)) for my good friend \(name)"
 //: - Experiment:
 //: Use `\()` to include a floating-point calculation in a string and to include someone’s name in a greeting.
 //:
@@ -77,7 +83,7 @@ print(shoppingList)
 //:
 let emptyArray = [String]()
 let emptyDictionary = [String: Float]()
-
+let newEmptyDoubleArray = [Double]()
 //: If type information can be inferred, you can write an empty array as `[]` and an empty dictionary as `[:]`—for example, when you set a new value for a variable or pass an argument to a function.
 //:
 shoppingList = []

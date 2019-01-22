@@ -13,6 +13,11 @@ for score in individualScores {
 }
 print(teamScore)
 
+// Testing out loops
+let colors = ["red","green","blue"]
+for color in colors{
+    print(color)
+}
 //: In an `if` statement, the conditional must be a Boolean expression—this means that code such as `if score { ... }` is an error, not an implicit comparison to zero.
 //:
 //: You can use `if` and `let` together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contains `nil` to indicate that a value is missing. Write a question mark (`?`) after the type of a value to mark the value as optional.
@@ -20,12 +25,20 @@ print(teamScore)
 var optionalString: String? = "Hello"
 print(optionalString == nil)
 
-var optionalName: String? = "John Appleseed"
+var optionalName: String? = nil
 var greeting = "Hello!"
-if let name = optionalName {
+var greeting2 = "Nil Example"
+if let name = optionalName { // skipped over if it is nil
     greeting = "Hello, \(name)"
+    
+}
+    // EXPERIMENT
+else{
+    greeting2 = "New greeting for unknown person"
 }
 
+
+// Changing optionalName to nil without an else clause causes the greeting to remain as the previous intialization
 //: - Experiment:
 //: Change `optionalName` to `nil`. What greeting do you get? Add an `else` clause that sets a different greeting if `optionalName` is `nil`.
 //:
@@ -47,7 +60,7 @@ switch vegetable {
         print("That would make a good tea sandwich.")
     case let x where x.hasSuffix("pepper"):
         print("Is it a spicy \(x)?")
-    default:
+    default: // If removed causes error "Switch must be exhaustive"
         print("Everything tastes good in soup.")
 }
 
@@ -61,20 +74,46 @@ switch vegetable {
 //: You use `for`-`in` to iterate over items in a dictionary by providing a pair of names to use for each key-value pair. Dictionaries are an unordered collection, so their keys and values are iterated over in an arbitrary order.
 //:
 let interestingNumbers = [
-    "Prime": [2, 3, 5, 7, 11, 13],
+    "Prime": [2, 3, 25, 7, 11, 13],
     "Fibonacci": [1, 1, 2, 3, 5, 8],
     "Square": [1, 4, 9, 16, 25],
 ]
 var largest = 0
+var type:String! // ! to promise the compiler that we will initialize it somewhere before running
 for (kind, numbers) in interestingNumbers {
     for number in numbers {
         if number > largest {
             largest = number
+            // EXPERIMENT
+            type = kind // it's initialized here ^
         }
     }
 }
 print(largest)
+print(type)
 
+
+// SG EXPERIMENT
+// Optional Binding
+if let primeNumbers = interestingNumbers["Prime"]{
+    for n in primeNumbers{
+        print(n)
+    }
+}
+else{
+    print("No Array Found")
+}
+
+// It's possible to request a key for which a value doesn't exist, so the dictionary subscript
+// will return an optional value - if it exists an optional value containing the existing value for that key is returned
+// if it doesn't exist, it returns nil
+// let primeNumbers = interestingNumbers["Prime"]! // an optional array of ints [Int]? - could be an array or could be nil
+
+// We can force unwrap it with ! - saying we're sure there is a value in there so go ahead
+// will crash if nil is returned from it though
+//for n in primeNumbers{
+//    print(n)
+//}
 //: - Experiment:
 //: Add another variable to keep track of which kind of number was the largest, as well as what that largest number was.
 //:
@@ -95,7 +134,7 @@ print(m)
 //: You can keep an index in a loop by using `..<` to make a range of indexes.
 //:
 var total = 0
-for i in 0..<4 {
+for i in 0...4 {
     total += i
 }
 print(total)
