@@ -128,12 +128,12 @@ class ViewController: UIViewController {
         
         // Animate Footer Label
         UIView.animate(withDuration:2.0,
-                       delay: 0.0,
+                       delay: 0.7,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity:0.0,
                        options:[],
                        animations: animateFooter,
-                       completion:{(done:Bool) in print("Animation Finished - completed\(done)")}
+                       completion:{(done:Bool) in print("Animation Finished - completed = \(done)")}
                        )
         
     }
