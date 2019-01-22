@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         footerLabel.textColor = UIColor.gray
         view.addSubview(footerLabel)
         // view.frame.width/height
-        footerLabel.center = CGPoint(x:view.frame.width/2, y:view.frame.height - 50)
+        
         
         
 //        // Animation for Top Label
@@ -76,6 +76,10 @@ class ViewController: UIViewController {
         self.bottomLabel.alpha = 1.0
     }
 
+    
+    func animateFooter(){
+        self.footerLabel.center = CGPoint(x:view.frame.width/2, y:view.frame.height - 50)
+    }
     // viewTapped Method
     @objc func viewTapped(tapGesture:UITapGestureRecognizer){
         print(tapGesture)
@@ -90,6 +94,9 @@ class ViewController: UIViewController {
         
         // Top Label - Only needs center moved here
         topLabel.center = CGPoint(x:100, y:40)
+        
+        // Footer Label
+        footerLabel.center = CGPoint(x:view.frame.width + 75, y:view.frame.height - 50)
         
         // Bottom Label
         bottomLabel.center = CGPoint(x: 200, y:90)
@@ -117,6 +124,16 @@ class ViewController: UIViewController {
                        options: [],
                        animations: animateBottomLabel,
                        completion:{(done:Bool) in NSLog("Animation finished - completed = \(done)")}
+                       )
+        
+        // Animate Footer Label
+        UIView.animate(withDuration:2.0,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.6,
+                       initialSpringVelocity:0.0,
+                       options:[],
+                       animations: animateFooter,
+                       completion:{(done:Bool) in print("Animation Finished - completed\(done)")}
                        )
         
     }
