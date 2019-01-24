@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C613BDB21FA4F8B009674BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C613BDA21FA4F8B009674BD /* AppDelegate.swift */; };
 		3C613BDD21FA4F8B009674BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C613BDC21FA4F8B009674BD /* ViewController.swift */; };
-		3C613BE021FA4F8B009674BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C613BDE21FA4F8B009674BD /* Main.storyboard */; };
+		3C613BE021FA4F8B009674BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C613BDE21FA4F8B009674BD /* Main.storyboard */; settings = {ASSET_TAGS = (100, 200, ); }; };
 		3C613BE221FA4F8B009674BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C613BE121FA4F8B009674BD /* Assets.xcassets */; };
 		3C613BE521FA4F8B009674BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C613BE321FA4F8B009674BD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -90,6 +90,10 @@
 		3C613BCF21FA4F8B009674BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					100,
+					200,
+				);
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Andrew Clark (RIT Student)";
