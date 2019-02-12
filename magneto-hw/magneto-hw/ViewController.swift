@@ -41,7 +41,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         } else {
             print("Error in importing image")
         }
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {})
     }
     
     override func viewDidLoad() {
@@ -111,11 +111,69 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    // Dragging Objects
     @objc func doPanGesture(panGesture:UIPanGestureRecognizer){
         let label = panGesture.view as! UILabel
         let position = panGesture.location(in: view)
         label.center = position
+        
+        // MARK: Animation in Progress
+        // https://www.raywenderlich.com/433-uigesturerecognizer-tutorial-getting-started
+        if panGesture.state == UIGestureRecognizerState.ended{
+            // Get velocity and others
+            let velocity = panGesture.velocity(in: self.view)
+            let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
+            print(magnitude)
+            let slideMultiplier = magnitude / 200
+            
+            // 2
+            let slideFactor = 0.2 * slideMultiplier
+            
+            //3
+            var finalPoint = CGPoint(x:panGesture.view!.center.x + (velocity.x * slideFactor), y:panGesture.view!.center.y + (velocity.y * slideFactor))
+            
+            //4 Final Destinations
+            finalPoint.x = min(max(finalPoint.x,-50), self.view.bounds.width + 200)
+            finalPoint.y = min(max(finalPoint.y,-50), self.view.bounds.height + 200)
+            
+            //5
+            if(magnitude > 1000 && ((finalPoint.x <= -50) || (finalPoint.x > self.view.bounds.width + 100) || (finalPoint.y <= -50) || (finalPoint.y > self.view.bounds.height + 50)))
+            {
+            UIView.animate(withDuration: 0.5,
+                                    delay: 0,
+                                    options: UIViewAnimationOptions.curveEaseOut,
+                                    animations: {panGesture.view!.center = finalPoint},
+                                    completion: nil)
+            
+            }
+        }
+        // END: Animation in Progress
+        // TODO: Delete the words once flung off the screen in animate's completion method
+        
+        
+        
+        
+        
+        
+        
+        // Animating based on drag
+//        if panGesture.state == UIGestureRecognizerState.ended {
+//            print("yeet")
+//            if(label.center.x > (view.frame.width - 20)){
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    label.center = CGPoint(x: label.center.x + 200, y: label.center.y)
+//                })
+//                print("Yeeted to the right")
+//            }
+//            else if (label.center.x < 15) {
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    label.center = CGPoint(x: label.center.x - 200, y: label.center.y)
+//                })
+//                print("Yeeted to the left")
+//            }
+//        }
     }
+    
     
     // Will be used to reassemble word layout if needed
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -131,6 +189,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 }
 
 //https://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift
+// literally done with .shuffle in Swift 4.2+
 extension MutableCollection {
     mutating func shuffle() {
         let c = count
