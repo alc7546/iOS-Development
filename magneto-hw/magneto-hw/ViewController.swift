@@ -30,9 +30,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
         image.allowsEditing = false
-        self.present(image, animated: true){
-            // Nothing yet
-        }
+        self.present(image, animated: true, completion: {})
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
