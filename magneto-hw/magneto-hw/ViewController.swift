@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var words =
     [
@@ -21,6 +21,30 @@ class ViewController: UIViewController {
     let screenHeight = UIScreen.main.bounds.height
     var fontSize:CGFloat!
     
+    
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        image.allowsEditing = false
+        self.present(image, animated: true){
+            // Nothing yet
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            backgroundImage.image = image
+            backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+            self.view.insertSubview(backgroundImage, at: 0)
+        } else {
+            print("Error in importing image")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,8 +128,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func importBackground(_ sender: Any) {
-    }
+    
     
 }
 
