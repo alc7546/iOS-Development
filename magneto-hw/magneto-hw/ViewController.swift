@@ -12,18 +12,38 @@ class ViewController: UIViewController {
 
     var words =
     [
-    "could","cloud","bot","bit","ask","a","geek","flame","file","ed","ed",
-    "create","like","lap","is","ing","I","her","drive","get","soft","screen",
-    "protect","online","meme","to","they","that","tech","space","source","y","write","while"
+    " could "," cloud "," bot "," bit "," ask "," a "," geek "," flame "," file "," ed "," ed ",
+    " create "," like "," lap "," is "," ing "," I "," her "," drive "," get "," soft "," screen ",
+    " protect "," online "," meme "," to "," they "," that "," tech "," space "," source "," y "," write "," while "
     ]
-    var screenWidth : CGFloat!
-    var screenHeight : CGFloat!
+    
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    var fontSize:CGFloat!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        screenWidth = UIScreen.main.bounds.width
-        screenHeight = UIScreen.main.bounds.height
+        switch UIApplication.shared.statusBarOrientation {
+            case .portrait:
+                fontSize = screenHeight * (0.025)
+                break
+            case .portraitUpsideDown:
+                fontSize = screenHeight * (0.025)
+                break
+            case .landscapeLeft:
+                fontSize = screenWidth * (0.025)
+                break
+            case .landscapeRight:
+                fontSize = screenHeight * (0.025)
+                break
+            case .unknown:
+                fontSize = 20
+                break
+        }
+        fontSize = screenHeight * (0.025)
+        
         placeWords()
     }
 
@@ -38,22 +58,34 @@ class ViewController: UIViewController {
         words.shuffle() //works in Swift 4.2+, uses custom extension for now from stackoverflow
         print(words)
         print(words.count)
-        var heightIterator = screenHeight * 0.1
-        var temp:CGFloat = 0
-        var x: CGFloat = 0
+        var heightIterator:CGFloat = 0.1
+        var x: CGFloat = 10
         for word in words{
+            // prob make another function here to reduce the bloat, maybe just one that takes a UILabel and styles it accordingly
+            let wordHeight = screenHeight * heightIterator 
             let l = UILabel()
-            l.backgroundColor = UIColor.white
+            l.backgroundColor = UIColor(white:1, alpha:0.8)
+            l.layer.masksToBounds = true
+            l.layer.cornerRadius = 5
+            l.layer.borderWidth = 1
+            l.layer.borderColor = UIColor.black.cgColor
             l.text = word
+            
+            l.font = l.font.withSize(fontSize)
             l.sizeToFit()
-            x = l.frame.width/2 + 20 + x
-            let y = heightIterator
-            l.center = CGPoint(x:x,y:y)
+            let y = wordHeight
+            l.frame.origin = CGPoint(x:x,y:y)
             view.addSubview(l)
             l.isUserInteractionEnabled = true
             let panGesture = UIPanGestureRecognizer(target:self, action:#selector(doPanGesture))
             l.addGestureRecognizer(panGesture)
-      
+            x = l.frame.width + 10 + x
+            if(x > (screenWidth -  l.frame.width - 10)){
+                x = 10
+                heightIterator = heightIterator + 0.05
+                
+            }
+            print(x)
         }
     }
     
@@ -61,6 +93,18 @@ class ViewController: UIViewController {
         let label = panGesture.view as! UILabel
         let position = panGesture.location(in: view)
         label.center = position
+    }
+    
+    // Will be used to reassemble word layout if needed
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape{
+            print("LandScape")
+        } else {
+            print("Portrait")
+        }
+    }
+    
+    @IBAction func importBackground(_ sender: Any) {
     }
     
 }
