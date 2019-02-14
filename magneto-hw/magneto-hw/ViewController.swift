@@ -12,17 +12,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     var words =
     [
-    " could "," cloud "," bot "," bit "," ask "," a "," geek "," flame "," file "," ed "," ed ",
-    " create "," like "," lap "," is "," ing "," I "," her "," drive "," get "," soft "," screen ",
-    " protect "," online "," meme "," to "," they "," that "," tech "," space "," source "," y "," write "," while "
+    "could","cloud","bot","bit","ask","a","geek","flame","file","ed","ed",
+    "create","like","lap","is","ing","I","her","drive","get","soft","screen",
+    "protect","online","meme","to","they","that","tech","space","source","y","write","while"
     ]
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     var fontSize:CGFloat!
-    
-    
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    @IBOutlet weak var imageImportButton: UIButton!
+    
+    
+    
+    
     @IBAction func importImage(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -47,6 +50,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Place image importer
+        placeImageImporter()
+        
+        // FIXME: This can be simplified
         switch UIApplication.shared.statusBarOrientation {
             case .portrait:
                 fontSize = screenHeight * (0.025)
@@ -91,8 +99,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             l.layer.cornerRadius = 5
             l.layer.borderWidth = 1
             l.layer.borderColor = UIColor.black.cgColor
-            l.text = word
-            
+            l.text = " \(word) "
+
             l.font = l.font.withSize(fontSize)
             l.sizeToFit()
             let y = wordHeight
@@ -184,7 +192,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    
+    // TEMP: Temporary function, only to be used until tab bar is implemented
+    func placeImageImporter(){
+        let importButtonHeight = 0.05 * screenHeight
+        let importButtonWidth = screenWidth
+        
+        imageImportButton.frame.size.height = importButtonHeight
+        imageImportButton.frame.size.width = importButtonWidth
+        
+        // Locate at bottom of the screen for now
+        imageImportButton.frame.origin = CGPoint(x: 0, y: screenHeight - imageImportButton.frame.size.height)
+        
+    }
     
 }
 
