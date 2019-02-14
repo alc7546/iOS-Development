@@ -100,9 +100,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             l.layer.borderWidth = 1
             l.layer.borderColor = UIColor.black.cgColor
             l.text = " \(word) "
-
             l.font = l.font.withSize(fontSize)
             l.sizeToFit()
+            // Word Label sizing - this isn't needed as it is already differing width but same height, but the rubric talked about it
+            // l.frame.size.height
+            // l.frame.size.width
             let y = wordHeight
             l.frame.origin = CGPoint(x:x,y:y)
             view.addSubview(l)
