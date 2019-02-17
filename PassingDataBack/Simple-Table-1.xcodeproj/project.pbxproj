@@ -59,15 +59,31 @@
 			isa = PBXGroup;
 			children = (
 				3C12249D2211D6240085A633 /* AppDelegate.swift */,
-				3C12249F2211D6240085A633 /* ViewController.swift */,
+				3C7B4B5D2219FAD60076F0F7 /* VC */,
+				3C7B4B5E2219FAEA0076F0F7 /* Model */,
 				3C1224A12211D6240085A633 /* Main.storyboard */,
-				3C1224AF2211D7480085A633 /* ColorsTableVC.swift */,
-				3C7B4B5A2219F7C30076F0F7 /* BackgroundColor.swift */,
 				3C1224A42211D6240085A633 /* Assets.xcassets */,
 				3C1224A62211D6240085A633 /* LaunchScreen.storyboard */,
 				3C1224A92211D6240085A633 /* Info.plist */,
 			);
 			path = "Simple-Table-1";
+			sourceTree = "<group>";
+		};
+		3C7B4B5D2219FAD60076F0F7 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3C12249F2211D6240085A633 /* ViewController.swift */,
+				3C1224AF2211D7480085A633 /* ColorsTableVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3C7B4B5E2219FAEA0076F0F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C7B4B5A2219F7C30076F0F7 /* BackgroundColor.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
