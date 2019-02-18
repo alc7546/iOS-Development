@@ -11,17 +11,20 @@ import UIKit
 class WordSetVC: UITableViewController {
 
     var wordSets = [WordSets]()
-    var selectedSet = WordSets.words1
-    let words1 = WordSets.words1
-    let words2 = WordSets.words2
+    var selectedSet = WordSets.pirateWords
+    let pirateWords = WordSets.pirateWords
+    let natureWords = WordSets.natureWords
+    let spaceWords = WordSets.spaceWords
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let wordSet1 = WordSets(name: "Word Set TEST", value: words1)
-        let wordSet2 = WordSets(name: "Word Set Two", value: words2)
+        let wordSet1 = WordSets(name: "Pirate Set", value: pirateWords)
+        let wordSet2 = WordSets(name: "Nature Set", value: natureWords)
+        let wordsSet3 = WordSets(name: "Astronomy Set", value: spaceWords)
         wordSets.append(wordSet1)
         wordSets.append(wordSet2)
+        wordSets.append(wordsSet3)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

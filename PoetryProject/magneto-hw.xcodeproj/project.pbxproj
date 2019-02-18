@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5B1318221A3EB000EE8618 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5B1317221A3EB000EE8618 /* Extensions.swift */; };
 		3C7B4B60221A05E00076F0F7 /* WordSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4B5F221A05E00076F0F7 /* WordSets.swift */; };
 		3C7B4B64221A08520076F0F7 /* WordSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4B63221A08520076F0F7 /* WordSetVC.swift */; };
 		3CBC7ADE220E318600D11372 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC7ADD220E318600D11372 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C5B1317221A3EB000EE8618 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3C7B4B5F221A05E00076F0F7 /* WordSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSets.swift; sourceTree = "<group>"; };
 		3C7B4B63221A08520076F0F7 /* WordSetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSetVC.swift; sourceTree = "<group>"; };
 		3CBC7ADA220E318600D11372 /* magneto-hw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "magneto-hw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				3CBC7ADD220E318600D11372 /* AppDelegate.swift */,
 				3C7B4B62221A07240076F0F7 /* VC */,
 				3C7B4B61221A07170076F0F7 /* Model */,
+				3C5B1317221A3EB000EE8618 /* Extensions.swift */,
 				3CBC7AE1220E318600D11372 /* Main.storyboard */,
 				3CBC7AE4220E318600D11372 /* Assets.xcassets */,
 				3CBC7AE6220E318600D11372 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5B1318221A3EB000EE8618 /* Extensions.swift in Sources */,
 				3CBC7AE0220E318600D11372 /* ViewController.swift in Sources */,
 				3C7B4B64221A08520076F0F7 /* WordSetVC.swift in Sources */,
 				3C7B4B60221A05E00076F0F7 /* WordSets.swift in Sources */,
