@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: Animations for UIView
 extension UIView{
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
@@ -15,6 +16,20 @@ extension UIView{
         animation.duration = 1.0
         animation.values = [-1.0,1.0,-1.0,1.0,-0.5,0.5,-0.25,0.25,0.0, 0.0]
         layer.add(animation, forKey: "shake")
+    }
+    
+    func fadeIn(withDuration duration: TimeInterval = 1.0){
+        UIView.animate(withDuration: duration, animations: {
+            self.backgroundColor = UIColor(white:1, alpha:0.8)
+            
+        })
+    }
+    
+    func fadeOut(withDuration duration: TimeInterval = 1.0){
+        UIView.animate(withDuration:duration, animations: {
+            self.alpha = 0.0
+            
+        })
     }
 }
 

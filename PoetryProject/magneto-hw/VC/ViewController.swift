@@ -86,7 +86,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             
             //5
-            if(magnitude > 800 && ((finalPoint.x <= -50) || (finalPoint.x > self.view.bounds.width + 100) || (finalPoint.y <= -50) || (finalPoint.y > self.view.bounds.height + 50)))
+            if(magnitude > 500 && ((finalPoint.x <= -50) || (finalPoint.x > self.view.bounds.width + 100) || (finalPoint.y <= -50) || (finalPoint.y > self.view.bounds.height + 50)))
             {
                 
                 
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                options: UIViewAnimationOptions.curveEaseOut,
                                animations: {
                                 panGesture.view!.center = finalPoint
-                                self.view.shake()
+                                label.fadeOut()
                                 },
                                completion: {_ in
                                 label.removeFromSuperview() // delete from view
@@ -163,7 +163,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Style
         let label = UILabel()
         label.tag = 100 // change w/ enum
-        label.backgroundColor = UIColor(white:1,alpha:0.8)
+        label.backgroundColor = UIColor(white:1,alpha:0.0)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
         label.layer.borderWidth = 1
@@ -176,8 +176,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let y = screenHeight * heightIterator // y position, based on screenheight and custom var
         let position = CGPoint(x:x, y:y)
         label.frame.origin = position
-        view.addSubview(label)
-        
+        self.view.addSubview(label)
+        label.fadeIn()
         x = label.frame.width + 10 + x
         // Check if the words need to be placed on new row
         if(x > (screenWidth - label.frame.width - 12)){
