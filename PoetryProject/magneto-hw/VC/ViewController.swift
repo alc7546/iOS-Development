@@ -163,7 +163,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Style
         let label = UILabel()
         label.tag = 100 // change w/ enum
-        label.backgroundColor = UIColor(white:1,alpha:0.0)
+        label.backgroundColor = UIColor(white:1,alpha:0.8)
+        label.layer.opacity = 0.0
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
         label.layer.borderWidth = 1

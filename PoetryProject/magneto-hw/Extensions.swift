@@ -20,7 +20,7 @@ extension UIView{
     
     func fadeIn(withDuration duration: TimeInterval = 1.0){
         UIView.animate(withDuration: duration, animations: {
-            self.backgroundColor = UIColor(white:1, alpha:0.8)
+            self.layer.opacity = 0.8
             
         })
     }
