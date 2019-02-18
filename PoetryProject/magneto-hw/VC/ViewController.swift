@@ -97,7 +97,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                 panGesture.view!.center = finalPoint
                                 self.view.shake()
                                 },
-                               completion: nil)
+                               completion: {_ in
+                                label.removeFromSuperview() // delete from view
+                            })
                 
             }
         }
@@ -187,6 +189,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         label.isUserInteractionEnabled = true
         let panGesture = UIPanGestureRecognizer(target: self, action:#selector(doPanGesture))
         label.addGestureRecognizer(panGesture)
+    }
+    
+    func deleteLabel(label: UILabel){
+        print(label.tag)
     }
     
     // MARK: Animations
