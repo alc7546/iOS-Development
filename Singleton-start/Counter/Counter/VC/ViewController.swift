@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var launchLabel: UILabel!
+    
     
     var cb:CounterBrain!
     // an "Immediately Invoked Closure Expression"  - IICE - "Icky"
@@ -25,8 +27,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         cb = CounterBrain(total: MyAppData.shared.counterTotal)
         //cb = CounterBrain(total: UserDefaults.standard.integer(forKey: "counter"))
-        displayTotal()
-        displayDate()
+        totalLabel.text = String(cb.total)
+        dateLabel.text = MyAppData.shared.dateString
+        MyAppData.shared.launchTotal+=1
+        launchLabel.text = "Launch Times: \(MyAppData.shared.launchTotal)"
+        
     }
 
     @IBAction func clearTapped(_ sender: Any) {
@@ -49,12 +54,14 @@ class ViewController: UIViewController {
         //UserDefaults.standard.set(cb.total, forKey:"counter")
         totalLabel.text = String(cb.total)
         displayDate()
+        MyAppData.shared.counterTotal = cb.total // save counter Total
     }
     
     private func displayDate(){
         let date = Date()
         let dateString = formatter.string(from: date)
         dateLabel.text = "Last used: \(dateString)"
+        MyAppData.shared.dateString = dateLabel.text!
     }
     
 

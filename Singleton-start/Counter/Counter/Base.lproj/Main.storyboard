@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -63,11 +69,22 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-Ru-zyK">
+                                <rect key="frame" x="113" y="312" width="151" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hnG-Ru-zyK" secondAttribute="height" multiplier="151:21" id="Mdb-3H-ejD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.96128594773123976" blue="0.31864680703341641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IXf-Ug-aIo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1H6-FE-ajp"/>
+                            <constraint firstItem="hnG-Ru-zyK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="B03-oq-iEj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7dT-rG-8sE" secondAttribute="bottom" constant="170" id="Bvn-lN-z37"/>
+                            <constraint firstItem="7dT-rG-8sE" firstAttribute="top" secondItem="hnG-Ru-zyK" secondAttribute="bottom" constant="74" id="DIt-9g-nHw"/>
                             <constraint firstItem="IXf-Ug-aIo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EfM-EH-OtX"/>
                             <constraint firstItem="xXw-Hc-b9d" firstAttribute="top" secondItem="Mtw-c6-jSR" secondAttribute="bottom" constant="41" id="IMj-H6-DRQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mtw-c6-jSR" secondAttribute="trailing" constant="144" id="R70-FT-mLd"/>
@@ -84,12 +101,13 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="xXw-Hc-b9d" id="Bvk-Ek-s9U"/>
+                        <outlet property="launchLabel" destination="hnG-Ru-zyK" id="ZYc-cz-qPu"/>
                         <outlet property="totalLabel" destination="IXf-Ug-aIo" id="W1d-bg-g4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="135" y="132.04225352112675"/>
         </scene>
     </scenes>
 </document>
