@@ -48,6 +48,19 @@ class ViewController: UIViewController {
         displayTotal()
     }
     
+    @IBAction func share(_ sender: AnyObject) {
+        let textToShare = "I just used Counter!\n\(dateLabel.text!)\nMy total is \(totalLabel.text!)!\n"
+        let igmWebsite = NSURL(string: "http://igm.rit.edu/")
+        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivityType.print]
+        let popoverMenuViewController = activityVC.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = .any
+        popoverMenuViewController?.sourceView = sender as? UIButton
+        self.present(activityVC, animated: true, completion: nil)
+        
+    }
+    
     
     // MARK: - Helpers -
     private func displayTotal(){
