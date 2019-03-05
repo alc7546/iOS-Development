@@ -34,6 +34,7 @@ class WordSets{
         "at"
     ]
     
+    
     let categoryKey = "categoryKey"
     var categoryString = "Pirate Set"{
         didSet{
@@ -44,15 +45,17 @@ class WordSets{
     
     private init(){
         print("Created MyAppData instance")
-        
+        readDefaultsData()
     }
     
     private func readDefaultsData(){
         let defaults = UserDefaults.standard
         if let s = defaults.object(forKey: categoryKey){
             categoryString = s as! String
+            print(categoryString)
         } else {
             categoryString = "Pirate Set"
+            print(categoryString)
         }
     }
 }

@@ -11,7 +11,11 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     //MARK: Variables
-    var defaultWords = WordSets.shared.pirateWords
+    var words = [
+        "Pirate Set": WordSets.shared.pirateWords,
+        "Astronomy Set": WordSets.shared.spaceWords,
+        "Nature Set": WordSets.shared.natureWords,
+    ]
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     var fontSize:CGFloat!
@@ -24,9 +28,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-      
+        var key = WordSets.shared.categoryString
+        print(key)
+        
         fontSize = screenHeight * (0.025)
-        placeWords(set: defaultWords)
+        placeWords(set: words[key]!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,6 +125,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if segue.identifier == "DoneTapped"{
             let wordVC = segue.source as! WordSetVC
             let wordSet = wordVC.selectedSet
+            print(WordSets.shared.categoryString)
             placeWords(set: wordSet)
             print("Done Tapped")
         }
@@ -147,6 +154,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         self.dismiss(animated: true, completion: {})
     }
+    
+    @IBAction func share(_ sender: AnyObject) {
+        let image = self.view.takeSnapShot()
+        let textToShare = "I just created a new poem with the \(WordSets.shared.categoryString) in Poetry Builder! Check it out!"
+        let objectsToShare:[AnyObject] = [textToShare as AnyObject, image!]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivityType.print]
+        let popoverMenuViewController = activityVC.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = .any
+        popoverMenuViewController?.barButtonItem = sender as? UIBarButtonItem
+        self.present(activityVC, animated: true, completion: nil)
+        
+    }
+    
     
     
     // MARK: Helper Functions
@@ -181,7 +202,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         label.fadeIn()
         x = label.frame.width + 10 + x
         // Check if the words need to be placed on new row
-        if(x > (screenWidth - label.frame.width - 12)){
+        if((label.frame.maxX) > (screenWidth - label.frame.width - 15)){
             x = 10 // reset x position
             heightIterator = heightIterator + 0.05 // increase custom var
         }

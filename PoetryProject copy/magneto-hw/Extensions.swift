@@ -31,6 +31,14 @@ extension UIView{
             
         })
     }
+    
+    func takeSnapShot() -> UIImage?{
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 
 //https://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift

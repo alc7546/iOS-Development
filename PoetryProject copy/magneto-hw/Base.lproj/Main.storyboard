@@ -27,8 +27,18 @@
                                             <action selector="importBackground:" destination="BYZ-38-t0r" id="svj-B2-Ed1"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="P63-SN-tL8"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="X4K-JT-0IC"/>
-                                    <barButtonItem title="Choose Word Set" id="tet-iR-FrF">
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="pYZ-UR-dM0"/>
+                                    <barButtonItem title="Share" id="l7c-Zn-wzZ">
+                                        <connections>
+                                            <action selector="share:" destination="BYZ-38-t0r" id="dvR-Sm-wyR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="v7r-WS-7hC"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AIN-8e-C7g"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LHP-qE-UoM"/>
+                                    <barButtonItem title="Theme" id="tet-iR-FrF">
                                         <connections>
                                             <segue destination="3iL-AE-4rQ" kind="popoverPresentation" identifier="showWordSegue" popoverAnchorBarButtonItem="tet-iR-FrF" id="K9b-cZ-frK">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>

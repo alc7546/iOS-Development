@@ -15,11 +15,11 @@ class WordSetVC: UITableViewController {
         "Nature Set": WordSets.shared.natureWords,
         "Astronomy Set": WordSets.shared.spaceWords
     ]
-    var selectedSet = WordSets.shared.pirateWords
-   
+    var selectedSet:[String] = []
+    var name:String = "Pirate Set"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var selectedSet = wordSets["Pirate Set"]
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -58,6 +58,10 @@ class WordSetVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedSet = Array(self.wordSets.values)[indexPath.row]
+        let key = Array(self.wordSets.keys)[indexPath.row]
+        name = key
+        print(name)
+        WordSets.shared.categoryString = name
         print(selectedSet)
     }
     
