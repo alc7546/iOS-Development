@@ -11,6 +11,7 @@ import UIKit
 
 class WordSets{
     static let shared = WordSets()
+    //MARK: Word Sets ivars
     let pirateWords =
     [
         "ahoy", "pirate", "and", "s", "ed", "d", "sail", "ship", "island", "eyepatch", "hook", "hand",
@@ -34,7 +35,7 @@ class WordSets{
         "at"
     ]
     
-    
+    //MARK: Set Keys
     let categoryKey = "categoryKey"
     var categoryString = "Pirate Set"{
         didSet{
@@ -48,6 +49,7 @@ class WordSets{
         readDefaultsData()
     }
     
+    //MARK: Read Defaults
     private func readDefaultsData(){
         let defaults = UserDefaults.standard
         if let s = defaults.object(forKey: categoryKey){

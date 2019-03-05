@@ -39,8 +39,11 @@ extension UIView{
         UIGraphicsEndImageContext()
         return image
     }
+    
+    
 }
 
+// MARK: Old version for shuffle method - used library computers
 //https://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift
 // literally done with .shuffle in Swift 4.2+
 extension MutableCollection {

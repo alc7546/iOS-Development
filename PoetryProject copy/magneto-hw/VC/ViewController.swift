@@ -28,8 +28,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var key = WordSets.shared.categoryString
-        print(key)
+        let key = WordSets.shared.categoryString
+        
+        // Set default background image
+        backgroundImage.image = #imageLiteral(resourceName: "DefaultBackground")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
         
         fontSize = screenHeight * (0.025)
         placeWords(set: words[key]!)
@@ -42,19 +46,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     
-
+    //MARK: Setup words on screen
     // Place the labels around the screen
     func placeWords( set: [String]){
         var set = set
-        
-        //FIXME: Change tags to an enum value
         // Deletes all previous items within the view that have the tag: 100
         deleteWithTags(tag: 100)
         
-        //FIXME: Background Color
-        view.backgroundColor = UIColor.orange
-        
-        //FIXME: Change Shuffle to 4.2 method
         set.shuffle() //works in Swift 4.2+, uses custom extension for now from stackoverflow
         
         // Iterators for placement
@@ -75,7 +73,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let position = panGesture.location(in: view)
         label.center = position
         
-        // MARK: Animation in Progress
+        
         if panGesture.state == UIGestureRecognizerState.ended{
             // Get velocity and others
             let velocity = panGesture.velocity(in: self.view)
@@ -155,6 +153,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.dismiss(animated: true, completion: {})
     }
     
+    //MARK: Share Button
     @IBAction func share(_ sender: AnyObject) {
         let image = self.view.takeSnapShot()
         let textToShare = "I just created a new poem with the \(WordSets.shared.categoryString) in Poetry Builder! Check it out!"
@@ -171,6 +170,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     // MARK: Helper Functions
+    // Delete the labels
     func deleteWithTags(tag: Int){
         for view in self.view.subviews{
             if view.tag == 100{
@@ -202,7 +202,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         label.fadeIn()
         x = label.frame.width + 10 + x
         // Check if the words need to be placed on new row
-        if((label.frame.maxX) > (screenWidth - label.frame.width - 15)){
+        if((label.frame.maxX) > (screenWidth - label.frame.width - (screenWidth * 0.1))){
             x = 10 // reset x position
             heightIterator = heightIterator + 0.05 // increase custom var
         }
@@ -213,17 +213,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         label.addGestureRecognizer(panGesture)
     }
     
-    func deleteLabel(label: UILabel){
-        print(label.tag)
-    }
     
-    // MARK: Animations
+    
+    
     
     
     
 }
 
-// TODO: Delete the words once flung off the screen in animate's completion method
 
 
 
