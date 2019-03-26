@@ -1,5 +1,5 @@
 //
-//  ParksTableVC.swift
+//  ParkDetailTableVC.swift
 //  ParkFinder
 //
 //  Created by Student on 3/26/19.
@@ -8,42 +8,92 @@
 
 import UIKit
 
-class ParksTableVC: UITableViewController {
+class ParkDetailTableVC: UITableViewController {
 
-    var parks = [StatePark]()
+    var park:StatePark?
+    let numSections = 4
+    enum MySection:Int{
+        case title=0,description,favorite,viewOnMap
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Parks"
+        title = park?.title
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-//        parks.append(StatePark(name:"Letchworth State Park", latitude: 42.685, longitude: -77.95944))
-//        parks.append(StatePark(name: "Hamlin Beach State Park", latitude: 43.3619, longitude: -77.95861))
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return numSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ParkData.shared.parks.count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "plainCell", for: indexPath)
 
-        // Configure the cell...
-        cell.textLabel?.text = ParkData.shared.parks[indexPath.row].title
+        switch indexPath.section{
+        case MySection.title.rawValue:
+            cell.textLabel?.text = park?.title
+            cell.textLabel?.textColor = UIColor.black
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            cell.textLabel?.numberOfLines = 1
+            cell.textLabel?.textAlignment = .left
+        case MySection.description.rawValue:
+            cell.textLabel?.text = park?.description
+            cell.textLabel?.textColor = UIColor.black
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.textAlignment = .left
+        case MySection.favorite.rawValue:
+            cell.textLabel?.text = "Favorite"
+            cell.textLabel?.textColor = view.tintColor
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
+            cell.textLabel?.numberOfLines = 1
+            cell.textLabel?.textAlignment = .center
+        case MySection.viewOnMap.rawValue:
+            cell.textLabel?.text = "View on Map"
+            cell.textLabel?.textColor = view.tintColor
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
+            cell.textLabel?.numberOfLines = 1
+            cell.textLabel?.textAlignment = .center
+        default:
+            cell.textLabel?.text = "TBD"
+        }
+        
+
         return cell
     }
     
+    // MARK: - Table View Delegate Methods -
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == MySection.favorite.rawValue{
+            return 54.0
+        }
+        
+        if indexPath.section == MySection.description.rawValue{
+            return 230.0
+        }
+        return 44.0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == MySection.favorite.rawValue{
+            print("favorite section tapped")
+        }
+        if indexPath.section == MySection.viewOnMap.rawValue{
+            print("viewOnMap section tapped)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -80,27 +130,14 @@ class ParksTableVC: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        
-        // identify selected row
-        if let indexPath = tableView.indexPathForSelectedRow{
-            let selectedRow = indexPath.row
-            // check for valid row
-            guard selectedRow < ParkData.shared.parks.count else{
-                print("\(selectedRow) is not in parks!")
-                return
-            }
-            
-            // if it is a ParkDetailVC then pass over park
-            if let detailVC = segue.destination as? ParkDetailTableVC{
-                detailVC.park = ParkData.shared.parks[selectedRow]
-            }
-        }
     }
+    */
+
 }

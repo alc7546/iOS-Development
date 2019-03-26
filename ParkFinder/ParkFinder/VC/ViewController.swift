@@ -70,7 +70,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
             parks.append(newPark)
             print(newPark)
         }
-        mapView.addAnnotations(parks)
+        ParkData.shared.parks = parks
+        mapView.addAnnotations(ParkData.shared.parks)
         print(parks[0].coordinate)
         
         //let mySpan = MKCoordinateSpan(latitudeDelta: 80, longitudeDelta: 90)
@@ -117,6 +118,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         print("Tapped info button for \(annotation.description)")
         // Maybe add something like a url to open maps app and show location ?
     }
+    
+    
+    func showMap(notification:Notification){
+        tabBarController?.selectedIndex = 0
+        
+        if let park = notification.userInfo?["park"] as? MKAnnotation{
+            mapView.selectAnnotation(park, animated: true)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

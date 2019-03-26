@@ -16,6 +16,8 @@
 		3C6268BC224AAAA000640E67 /* parks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C6268BB224AAAA000640E67 /* parks.json */; };
 		3C640B69224AB6BF0084867B /* StatePark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C640B68224AB6BF0084867B /* StatePark.swift */; };
 		3FAE8067224AD4B6009C3704 /* ParksTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8066224AD4B6009C3704 /* ParksTableVC.swift */; };
+		3FAE8069224AD845009C3704 /* ParkDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE8068224AD845009C3704 /* ParkDetailTableVC.swift */; };
+		3FAE806B224ADB5F009C3704 /* ParkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAE806A224ADB5F009C3704 /* ParkData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,9 @@
 		3C6268B9224AAA7F00640E67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3C6268BB224AAAA000640E67 /* parks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parks.json; sourceTree = "<group>"; };
 		3C640B68224AB6BF0084867B /* StatePark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePark.swift; sourceTree = "<group>"; };
-		3FAE8066224AD4B6009C3704 /* ParksTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParksTableVC.swift; path = VC/ParksTableVC.swift; sourceTree = "<group>"; };
+		3FAE8066224AD4B6009C3704 /* ParksTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksTableVC.swift; sourceTree = "<group>"; };
+		3FAE8068224AD845009C3704 /* ParkDetailTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetailTableVC.swift; sourceTree = "<group>"; };
+		3FAE806A224ADB5F009C3704 /* ParkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParkData.swift; path = Data/ParkData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +73,6 @@
 				3C640B67224AB6940084867B /* Model */,
 				3C640B6B224AB7890084867B /* Data */,
 				3C6268AA224AAA5000640E67 /* Main.storyboard */,
-				3FAE8066224AD4B6009C3704 /* ParksTableVC.swift */,
 				3C6268AD224AAA5000640E67 /* Assets.xcassets */,
 				3C6268AF224AAA5000640E67 /* LaunchScreen.storyboard */,
 				3C6268B2224AAA5000640E67 /* Info.plist */,
@@ -89,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				3C640B68224AB6BF0084867B /* StatePark.swift */,
+				3FAE806A224ADB5F009C3704 /* ParkData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -96,7 +100,9 @@
 		3C640B6A224AB7760084867B /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				3FAE8068224AD845009C3704 /* ParkDetailTableVC.swift */,
 				3C6268A8224AAA5000640E67 /* ViewController.swift */,
+				3FAE8066224AD4B6009C3704 /* ParksTableVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -187,8 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FAE8069224AD845009C3704 /* ParkDetailTableVC.swift in Sources */,
 				3C6268A9224AAA5000640E67 /* ViewController.swift in Sources */,
 				3FAE8067224AD4B6009C3704 /* ParksTableVC.swift in Sources */,
+				3FAE806B224ADB5F009C3704 /* ParkData.swift in Sources */,
 				3C6268A7224AAA5000640E67 /* AppDelegate.swift in Sources */,
 				3C640B69224AB6BF0084867B /* StatePark.swift in Sources */,
 			);
