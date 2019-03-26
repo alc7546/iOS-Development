@@ -1,0 +1,38 @@
+{
+	"parks": [
+		{
+			"latitude": "42.685",
+			"longitude": "-77.95944",
+			"name": "Letchworth State Park"
+		},
+		{
+			"latitude": "43.36139",
+			"longitude": "-77.95861",
+			"name": "Hamlin Beach State Park"
+		},
+		{
+			"latitude": "42.53111",
+			"longitude": "-77.88167",
+			"name": "Rattlesnake Hill State Wildlife Management Area"
+		},
+		{
+			"latitude": "42.51667",
+			"longitude": "-77.69278",
+			"name": "Stony Brook State Park"
+		},
+		{
+			"latitude": "43.30028",
+			"longitude": "-77.71",
+			"name": "Braddock Bay State Park"
+		},
+		{
+			"latitude": "42.633201",
+			"longitude": "-77.36551",
+			"name": "High Tor Fish and Wildlife Management Area"
+		},
+		{
+			"latitude": "42.0",
+			"longitude": "-77.0"
+		}
+	]
+}
