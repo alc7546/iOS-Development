@@ -73,8 +73,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(parks)
         print(parks[0].coordinate)
         
-        let mySpan = MKCoordinateSpan(latitudeDelta: 80, longitudeDelta: 90)
-        let myRegion = MKCoordinateRegion(center: parks[0].coordinate, span: mySpan)
+        //let mySpan = MKCoordinateSpan(latitudeDelta: 80, longitudeDelta: 90)
+        let myRegion = MKCoordinateRegionMakeWithDistance(parks[0].coordinate, metersPerMile * 100, metersPerMile * 100)
         mapView.setRegion(myRegion, animated: true)
         mapView.selectAnnotation(parks[0], animated: true)
     }
