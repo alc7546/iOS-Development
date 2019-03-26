@@ -73,7 +73,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(parks)
         print(parks[0].coordinate)
         
-        let myRegion = MKCoordinateRegion(center: parks[0].coordinate, latitudinalMeters: metersPerMile * 100, longitudinalMeters: metersPerMile * 100)
+        let mySpan = MKCoordinateSpan(latitudeDelta: 80, longitudeDelta: 90)
+        let myRegion = MKCoordinateRegion(center: parks[0].coordinate, span: mySpan)
         mapView.setRegion(myRegion, animated: true)
         mapView.selectAnnotation(parks[0], animated: true)
     }
@@ -82,8 +83,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
     // MARK: - MKMapViewDelegate Protocol Methods -
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let title = view.annotation?.title ?? "no title found"
+        if let title = view.annotation?.title ?? "no title found"{
         print("Tapped \(String(describing: title))")
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -99,7 +101,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             view = dequedview
         } else {
             // make new view and put button in it
-            view = MKPinAnnotationView(annotation: annotation, resuseIdentifier: identifier)
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
