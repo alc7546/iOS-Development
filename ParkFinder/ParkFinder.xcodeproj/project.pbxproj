@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0CDB81224EBAEA007B82B9 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CDB80224EBAEA007B82B9 /* MyTabBarController.swift */; };
 		3C6268A7224AAA5000640E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6268A6224AAA5000640E67 /* AppDelegate.swift */; };
 		3C6268A9224AAA5000640E67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6268A8224AAA5000640E67 /* ViewController.swift */; };
 		3C6268AC224AAA5000640E67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6268AA224AAA5000640E67 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C0CDB80224EBAEA007B82B9 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		3C6268A3224AAA5000640E67 /* ParkFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6268A6224AAA5000640E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C6268A8224AAA5000640E67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				3C640B6A224AB7760084867B /* VC */,
 				3C640B67224AB6940084867B /* Model */,
 				3C640B6B224AB7890084867B /* Data */,
+				3C0CDB80224EBAEA007B82B9 /* MyTabBarController.swift */,
 				3C6268AA224AAA5000640E67 /* Main.storyboard */,
 				3C6268AD224AAA5000640E67 /* Assets.xcassets */,
 				3C6268AF224AAA5000640E67 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 				3FAE806B224ADB5F009C3704 /* ParkData.swift in Sources */,
 				3C6268A7224AAA5000640E67 /* AppDelegate.swift in Sources */,
 				3C640B69224AB6BF0084867B /* StatePark.swift in Sources */,
+				3C0CDB81224EBAEA007B82B9 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

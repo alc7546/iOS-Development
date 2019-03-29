@@ -91,14 +91,15 @@ class ParkDetailTableVC: UITableViewController {
             print("favorite section tapped")
         }
         if indexPath.section == MySection.viewOnMap.rawValue{
+            let nc = NotificationCenter.default
+            let data = ["park": park]
+            print(data)
+            nc.post(name: showParkNotification, object:self, userInfo: data)
             print("viewOnMap section tapped")
         }
         
         
-        let nc = NotificationCenter.default
-        let data = ["park": park]
-        print(data)
-        nc.post(name: showParkNotification, object:self, userInfo: data)
+        
     }
     
 
