@@ -91,9 +91,16 @@ class ParkDetailTableVC: UITableViewController {
             print("favorite section tapped")
         }
         if indexPath.section == MySection.viewOnMap.rawValue{
-            print("viewOnMap section tapped)
+            print("viewOnMap section tapped")
         }
+        
+        
+        let nc = NotificationCenter.default
+        let data = ["park": park]
+        print(data)
+        nc.post(name: showParkNotification, object:self, userInfo: data)
     }
+    
 
     /*
     // Override to support conditional editing of the table view.

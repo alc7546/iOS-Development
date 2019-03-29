@@ -9,8 +9,11 @@
 import UIKit
 import MapKit
 
+let showParkNotification = NSNotification.Name("showParkNotification")
+
 class ViewController: UIViewController, MKMapViewDelegate {
 
+    
     @IBOutlet weak var mapView: MKMapView!
     let metersPerMile:Double = 1609.344
     var parks = [StatePark]()
@@ -19,6 +22,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         mapView.delegate = self
         loadData()
+        
+        let nc = NotificationCenter.default
+        
+        // register object as an observer
+        nc.addObserver(self, selector: #selector(showMap), name: showParkNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // Load data in from known json file named parks,
@@ -120,10 +132,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    func showMap(notification:Notification){
+    @objc func showMap(notification:Notification){
         tabBarController?.selectedIndex = 0
         
         if let park = notification.userInfo?["park"] as? MKAnnotation{
+            
             mapView.selectAnnotation(park, animated: true)
         }
     }
