@@ -12,6 +12,7 @@ class BookmarkTableVC: UITableViewController {
     let simpleCell = "simpleCell"
     var bookmarks = [Bookmark]()
     let myAddBookmarkSegue = "addBookmarkSegue"
+    let bookmarksKey = "bookmarks"
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Bookmarks"
@@ -26,6 +27,25 @@ class BookmarkTableVC: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
+        
+        let bookmark = Bookmark(name: "IGM", url: "https://igm.rit.edu")
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(bookmark)
+        print(jsonData)
+        
+        let jsonString = String(data: jsonData, encoding: .utf8) ?? "Unable to encode"
+        print(jsonString)
+        
+        // Decode
+        let decoder = JSONDecoder()
+        let decodedBookmark = try! decoder.decode(Bookmark.self, from: jsonData)
+        print(decodedBookmark.name)
+        print(decodedBookmark.url)
+        
+        //saveBookmarks()
+        loadBookmarks()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(saveBookmarks), name: .UIApplicationWillResignActive, object: nil) 
         
     }
 
@@ -64,8 +84,7 @@ class BookmarkTableVC: UITableViewController {
 
     
     // Override to support editing the table view.
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             bookmarks.remove(at: indexPath.row)
@@ -120,6 +139,7 @@ class BookmarkTableVC: UITableViewController {
         if let addBookmarkVC = segue.source as? AddBookmarkVC{
             if let bookmark = addBookmarkVC.bookmark{
                 bookmarks.append(bookmark)
+                saveBookmarks()
                 tableView.reloadData()
             }
         }
@@ -128,6 +148,40 @@ class BookmarkTableVC: UITableViewController {
     @IBAction func unwindWithCancelTapped(segue:UIStoryboardSegue){
         print("unwindWithCancelTapped")
         
+    }
+    
+    // MARK: - Helpers
+    @objc func saveBookmarks(){
+        // Let's serialize & store the whole bookmarks array in UserDefaults
+        // Also write code to fail gracefully
+        do{
+            // JSONEncoder().encode(bookmarks) calls Array.encode(to:)
+            // And then the array calls Bookmark.encode(to:) on every Bookmark in the array
+            try UserDefaults.standard.set(JSONEncoder().encode(bookmarks), forKey: bookmarksKey)
+            print("Now Saving Bookmarks!")
+        } catch {
+            print("Error loading bookmarks")
+        }
+    }
+    
+    func loadBookmarks(){
+        // bail out if we can't find a value in UserDefaults
+        guard let encoded = UserDefaults.standard.object(forKey: bookmarksKey) as? Data else{
+            print("Warning: Could not find a value for the `bookmarks` key!")
+            return
+        }
+        do{
+            // JSONDecoder().decode() calls Array.init(from decoder: Decoder)
+            // And then the array calls Bookmark.init(from decoder: Decoder) on every Bookmark in the array
+            let decodedBookmarks = try JSONDecoder().decode([Bookmark].self, from: encoded)
+            print("Now loading bookmarks:")
+            for b in decodedBookmarks{
+                print(b.name, b.url)
+            }
+            bookmarks = decodedBookmarks
+        } catch{
+            print("Error: Problem decoding bookmarks!")
+        }
     }
 
 }

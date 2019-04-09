@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Bookmark {
+class Bookmark:Codable {
     var name:String
     var url: String
     

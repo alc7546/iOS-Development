@@ -28,8 +28,7 @@ class AddBookmarkVC: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let name = (titleField.text?.count)! > 0 ? titleField.text! : "No title entered"
-        let url = (urlField.text?.count)! > 0 ? titleField.text!: "No URL entered"
-        
+        let url = (urlField.text?.count)! > 0 ? urlField.text!: "No URL entered"
         bookmark = Bookmark(name: name, url: url)
     }
     

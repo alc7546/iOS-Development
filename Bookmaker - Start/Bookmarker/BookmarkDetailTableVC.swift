@@ -92,6 +92,8 @@ class BookmarkDetailTableVC: UITableViewController {
                 options:[:],
                 completionHandler: {
                     (success) in
+                    print(self.bookmark)
+                    print(self.bookmark?.url)
                     print("Open \(url.description) - success = \(success)")
                 }
             )
