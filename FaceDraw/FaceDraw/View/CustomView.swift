@@ -74,16 +74,21 @@ import UIKit
 //        let myLeftEye = CGRect(x:150, y:165, width:145, height:95)
 //        ctx.fillEllipse(in: myLeftEye)
 //        ctx.strokeEllipse(in: myLeftEye)
-        drawEllipse(ctx: ctx, x: 150, y: 165, width: 145, height: 95, scaleX: 1, scaleY: 1, rotation: 0)
-        drawEllipse(ctx: ctx, x: 453, y: 165, width: 145, height: 95, scaleX: 1, scaleY: 1, rotation: 0)
+        drawEllipse(ctx: ctx, x: 50, y: 145, width: 145, height: 95, scaleX: 1.5, scaleY: 1.5, rotation: 0)
+        drawEllipse(ctx: ctx, x: 353, y: 145, width: 145, height: 95, scaleX: 1.5, scaleY: 1.5, rotation: 0)
         
         // Set fill for pupils
         UIColor.blue.setFill()
         
         // Draw pupils
-        drawEllipse(ctx: ctx, x: 240, y: 188, width: 40, height: 40, scaleX: 1, scaleY: 1, rotation: 0)
-        drawEllipse(ctx: ctx, x: 468, y: 188, width: 40, height: 40, scaleX: 1, scaleY: 1, rotation: 0)
+        drawEllipse(ctx: ctx, x: 140, y: 168, width: 40, height: 40, scaleX: 1.5, scaleY: 1.5, rotation: 0)
+        drawEllipse(ctx: ctx, x: 368, y: 168, width: 40, height: 40, scaleX: 1.5, scaleY: 1.5, rotation: 0)
       
+        // Warts
+        UIColor.gray.setFill()
+        drawEllipse(ctx: ctx, x: 320, y: 608, width: 40, height: 40, scaleX: 1, scaleY: 1, rotation: 0)
+        drawEllipse(ctx: ctx, x: 150, y: 618, width: 40, height: 40, scaleX: 1, scaleY: 1, rotation: 0)
+        drawEllipse(ctx: ctx, x: 420, y: 648, width: 40, height: 40, scaleX: 1, scaleY: 1, rotation: 0)
         
         // #5 - Draw teeth (paths)
         ctx.setFillColor(red:0.0, green:1.0, blue:0.2, alpha:1.0)
@@ -91,37 +96,27 @@ import UIKit
         ctx.setLineWidth(4.0)
         
         // Left tooth
-        // Push drawing state
-        ctx.saveGState()
-        // translate drawing down to the right side of the mouth
-        ctx.translateBy(x: 150.0, y: 805.0)
-        
-        // Points are counter-clockwise
-        ctx.beginPath()
-        ctx.move(to: CGPoint(x:70,y:0))
-        ctx.addLine(to: CGPoint(x:0,y:0))
-        ctx.addLine(to: CGPoint(x:35,y:80))
-        ctx.closePath()
-        ctx.drawPath(using: .fillStroke)
-        
-        // pop state back to (0,0)
-        ctx.restoreGState()
+        drawTriangle(ctx: ctx, translateX: 150, translateY: 805, move: CGPoint(x:70, y:0), add1: CGPoint(x:0, y:0), add2: CGPoint(x:35, y:80))
         
         // right tooth
-        // push drawing state
-        ctx.saveGState()
-        // translate to right side side of mouth
-        ctx.translateBy(x: 550.0, y: 805.0)
+        drawTriangle(ctx: ctx, translateX: 550, translateY: 805, move: CGPoint(x:70, y:0), add1: CGPoint(x:0, y:0), add2: CGPoint(x:35, y:80))
+       
+        // bottom left tooth
+        drawTriangle(ctx: ctx, translateX: 200, translateY: 1060, move: CGPoint(x:70, y:0), add1: CGPoint(x:0, y:0), add2: CGPoint(x:35, y:-80))
         
-        // Counter-clockwise points
+        // bottom right tooth
+        drawTriangle(ctx: ctx, translateX: 500, translateY: 1060, move: CGPoint(x:70, y:0), add1: CGPoint(x:0, y:0), add2: CGPoint(x:35, y:-80))
+    }
+    
+    func drawTriangle(ctx:CGContext, translateX:CGFloat, translateY:CGFloat, move:CGPoint, add1: CGPoint, add2: CGPoint){
+        ctx.saveGState()
+        ctx.translateBy(x: translateX, y: translateY)
         ctx.beginPath()
-        ctx.move(to: CGPoint(x:70,y:0))
-        ctx.addLine(to: CGPoint(x:0,y:0))
-        ctx.addLine(to: CGPoint(x:35,y:80))
+        ctx.move(to: move)
+        ctx.addLine(to: add1)
+        ctx.addLine(to: add2)
         ctx.closePath()
         ctx.drawPath(using: .fillStroke)
-        
-        // pop state back
         ctx.restoreGState()
     }
     
