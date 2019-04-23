@@ -46,7 +46,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if segue.identifier == "showDetailsSegue"{
             let detailsVC = segue.destination as! DetailsViewController
             let cell = sender as! MyCollectionViewCell
-            detailsVC.titleText = cell.myLabel.text!
+            detailsVC.titleText = TestModel.test.name
+            detailsVC.image = TestModel.test.mainImage
+            detailsVC.bioText = TestModel.test.bio
+            
             print("succeeded")
             print(cell.myLabel.text!)
         }

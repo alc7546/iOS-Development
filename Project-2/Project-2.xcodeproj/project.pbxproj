@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C9C243F226E9AE300C70118 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C243E226E9AE300C70118 /* TestModel.swift */; };
+		3C9C2442226EA14D00C70118 /* SevenElevenSerif.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C9C2441226EA14C00C70118 /* SevenElevenSerif.otf */; };
+		3C9C2447226EB14C00C70118 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C2446226EB14C00C70118 /* CALayer.swift */; };
 		3CCFAD3D22655E3600F513EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFAD3C22655E3600F513EE /* AppDelegate.swift */; };
 		3CCFAD3F22655E3600F513EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFAD3E22655E3600F513EE /* ViewController.swift */; };
 		3CCFAD4222655E3600F513EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CCFAD4022655E3600F513EE /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C9C243E226E9AE300C70118 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		3C9C2441226EA14C00C70118 /* SevenElevenSerif.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SevenElevenSerif.otf; sourceTree = "<group>"; };
+		3C9C2446226EB14C00C70118 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		3CCFAD3922655E3600F513EE /* Project-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCFAD3C22655E3600F513EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CCFAD3E22655E3600F513EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C9C243D226E9AD800C70118 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C243E226E9AE300C70118 /* TestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3C9C2440226EA12900C70118 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C2441226EA14C00C70118 /* SevenElevenSerif.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		3C9C2443226EB09F00C70118 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C2446226EB14C00C70118 /* CALayer.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		3CCFAD3022655E3600F513EE = {
 			isa = PBXGroup;
 			children = (
@@ -59,23 +89,17 @@
 			isa = PBXGroup;
 			children = (
 				3CCFAD3C22655E3600F513EE /* AppDelegate.swift */,
-				3CCFAD5122656A0D00F513EE /* Models */,
+				3C9C2443226EB09F00C70118 /* extensions */,
+				3C9C2440226EA12900C70118 /* fonts */,
+				3C9C243D226E9AD800C70118 /* Model */,
 				3CCFAD5022656A0800F513EE /* Controllers */,
 				3CCFAD4F22656A0400F513EE /* Views */,
-				3CCFAD4E226569FE00F513EE /* Extensions */,
 				3CCFAD4022655E3600F513EE /* Main.storyboard */,
 				3CCFAD4322655E3600F513EE /* Assets.xcassets */,
 				3CCFAD4522655E3600F513EE /* LaunchScreen.storyboard */,
 				3CCFAD4822655E3600F513EE /* Info.plist */,
 			);
 			path = "Project-2";
-			sourceTree = "<group>";
-		};
-		3CCFAD4E226569FE00F513EE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3CCFAD4F22656A0400F513EE /* Views */ = {
@@ -93,13 +117,6 @@
 				3CCFAD56226570B700F513EE /* DetailsViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		3CCFAD5122656A0D00F513EE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9C2442226EA14D00C70118 /* SevenElevenSerif.otf in Resources */,
 				3CCFAD4722655E3600F513EE /* LaunchScreen.storyboard in Resources */,
 				3CCFAD4422655E3600F513EE /* Assets.xcassets in Resources */,
 				3CCFAD4222655E3600F513EE /* Main.storyboard in Resources */,
@@ -176,6 +194,8 @@
 			files = (
 				3CCFAD3F22655E3600F513EE /* ViewController.swift in Sources */,
 				3CCFAD3D22655E3600F513EE /* AppDelegate.swift in Sources */,
+				3C9C243F226E9AE300C70118 /* TestModel.swift in Sources */,
+				3C9C2447226EB14C00C70118 /* CALayer.swift in Sources */,
 				3CCFAD5322656A3800F513EE /* MyCollectionViewCell.swift in Sources */,
 				3CCFAD57226570B700F513EE /* DetailsViewController.swift in Sources */,
 			);

@@ -9,12 +9,28 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-    @IBOutlet weak var myTitle:UILabel?
+    @IBOutlet weak var myTitle:UILabel!
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var bio: UILabel!
+    
+    
+    
+    /*
+     
+     */
     var titleText: String = ""
-
+    var bioText: String = ""
+    var image: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTitle?.text = titleText
+        myTitle.text = titleText
+        mainImage.image = image
+        bio.text = bioText
+        bio.numberOfLines = 0;
+        bio.sizeToFit()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "CharacterBackground"))
+        self.bio.layer.addBorder(edge: UIRectEdge.top, color: UIColor.yellow, thickness: 0.5)
+        self.bio.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.yellow, thickness: 0.5)
         // Do any additional setup after loading the view.
     }
 
