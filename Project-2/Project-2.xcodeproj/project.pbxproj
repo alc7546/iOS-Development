@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C8D71B2227B5BF100DEC1D2 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8D71B1227B5BF100DEC1D2 /* TwitterViewController.swift */; };
+		3C8D71B4227B5FCB00DEC1D2 /* TriviaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8D71B3227B5FCB00DEC1D2 /* TriviaViewController.swift */; };
 		3C9C243F226E9AE300C70118 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C243E226E9AE300C70118 /* TestModel.swift */; };
 		3C9C2442226EA14D00C70118 /* SevenElevenSerif.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C9C2441226EA14C00C70118 /* SevenElevenSerif.otf */; };
 		3C9C2447226EB14C00C70118 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C2446226EB14C00C70118 /* CALayer.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C8D71B1227B5BF100DEC1D2 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
+		3C8D71B3227B5FCB00DEC1D2 /* TriviaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaViewController.swift; sourceTree = "<group>"; };
 		3C9C243E226E9AE300C70118 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		3C9C2441226EA14C00C70118 /* SevenElevenSerif.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SevenElevenSerif.otf; sourceTree = "<group>"; };
 		3C9C2446226EB14C00C70118 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			children = (
 				3CCFAD3E22655E3600F513EE /* ViewController.swift */,
 				3CCFAD56226570B700F513EE /* DetailsViewController.swift */,
+				3C8D71B1227B5BF100DEC1D2 /* TwitterViewController.swift */,
+				3C8D71B3227B5FCB00DEC1D2 /* TriviaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 				3CCFAD3D22655E3600F513EE /* AppDelegate.swift in Sources */,
 				3C9C243F226E9AE300C70118 /* TestModel.swift in Sources */,
 				3C9C2447226EB14C00C70118 /* CALayer.swift in Sources */,
+				3C8D71B4227B5FCB00DEC1D2 /* TriviaViewController.swift in Sources */,
 				3CCFAD5322656A3800F513EE /* MyCollectionViewCell.swift in Sources */,
+				3C8D71B2227B5BF100DEC1D2 /* TwitterViewController.swift in Sources */,
 				3CD09357227ABFE000DA449E /* Roster.swift in Sources */,
 				3CCFAD57226570B700F513EE /* DetailsViewController.swift in Sources */,
 			);
