@@ -13,8 +13,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"]
-    var roster:Roster!
-    
+    var roster = Roster.shared
+    @IBOutlet weak var collectionView: UICollectionView!
+    var selectedCell: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.myLabel.text = self.items[indexPath.item]
         cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         
+        
         return cell
     }
     
@@ -46,6 +48,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        selectedCell = indexPath.item
+        print(selectedCell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,10 +57,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             let detailsVC = segue.destination as! DetailsViewController
             let cell = sender as! MyCollectionViewCell
-            detailsVC.titleText = TestModel.test.name
+            let path = self.collectionView.indexPath(for: cell)?.item
+            print(path)
+            detailsVC.titleText = roster.characters[path!].charName!
             detailsVC.image = TestModel.test.mainImage
             detailsVC.bioText = TestModel.test.bio
-            
             print("succeeded")
             print(cell.myLabel.text!)
         }
