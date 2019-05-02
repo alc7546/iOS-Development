@@ -20,6 +20,12 @@ class TwitterViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadHTMLString(webContent, baseURL: nil)
+        self.view.backgroundColor = UIColor(red:41/255, green:47/255, blue:50/255, alpha:1.0)
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }

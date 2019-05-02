@@ -12,23 +12,27 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"]
     var roster = Roster.shared
     @IBOutlet weak var collectionView: UICollectionView!
     var selectedCell: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = UIColor(patternImage:(#imageLiteral(resourceName: "CharacterBackground")))
         collectionView.backgroundColor = UIColor.clear
         print(roster.characters.count)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 198/255, green: 175/255, blue:103/266, alpha:1.0)
     }
     // MARK: - UICollectionViewDataSource protocol
     
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.roster.characters.count
     }
     
     // make a cell for each cell index path
@@ -40,7 +44,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         print(roster.characters)
         cell.backgroundColor = UIColor(patternImage: roster.characters[indexPath.row].rosterIcon) // make cell more visible in our example project
-        
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor(red: 89/255, green: 77/255, blue:62/266, alpha:1.0).cgColor
         
         return cell
     }
