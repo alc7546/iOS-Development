@@ -200,10 +200,10 @@
                                     <action selector="triviaButtonPressedWithSender:" destination="x0q-yW-I5N" eventType="touchUpInside" id="gu3-2R-6Pj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhR-FP-03q">
-                                <rect key="frame" x="57" y="194" width="301" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhR-FP-03q">
+                                <rect key="frame" x="57" y="163" width="337" height="368"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SevenElevenSerifRegular" family="SevenElevenSerif" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="SevenElevenSerifRegular" family="SevenElevenSerif" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

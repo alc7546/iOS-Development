@@ -36,7 +36,7 @@ class TriviaViewController: UIViewController{
         let randomNum = Int(arc4random_uniform(UInt32(triviaStrings.count - 1)) + 0)
         triviaLabel.text = triviaStrings[randomNum]
         triviaLabel.numberOfLines=0
-        triviaLabel.sizeToFit()
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
