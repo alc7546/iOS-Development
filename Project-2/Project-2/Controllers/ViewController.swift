@@ -58,6 +58,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         selectedCell = indexPath.item
     }
     
+    
+    // Prepare for selection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetailsSegue"{
             

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Roster Singleton Shared
 class Roster{
     static let shared = Roster()
     

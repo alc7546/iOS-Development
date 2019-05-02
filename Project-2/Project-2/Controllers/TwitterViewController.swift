@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 
+// Embed Twitter View
 class TwitterViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
@@ -17,6 +18,7 @@ class TwitterViewController: UIViewController, WKNavigationDelegate {
                     """
 
     
+    // Load in Twitter Stream
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadHTMLString(webContent, baseURL: nil)

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Character Class
 
 public class Character: NSObject{
     private(set) var name: String

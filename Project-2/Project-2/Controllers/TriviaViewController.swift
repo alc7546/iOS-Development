@@ -32,6 +32,7 @@ class TriviaViewController: UIViewController{
         
     }
     
+    // Implement Random Trivia Fact
     @IBAction func triviaButtonPressed(sender: UIButton){
         let randomNum = Int(arc4random_uniform(UInt32(triviaStrings.count - 1)) + 0)
         triviaLabel.text = triviaStrings[randomNum]
