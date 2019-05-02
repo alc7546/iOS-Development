@@ -11,7 +11,7 @@ import UIKit
 class TestModel{
     static let test = TestModel()
     let name = "Erron"
-    let mainImage = #imageLiteral(resourceName: "ErronBlack")
+    let mainImage = UIImage(named: "ErronBlack")
     let bio = """
                 The best shot in Texas left home to seek adventure and
                 excitement in Outworld with Kano and the Black Dragon.

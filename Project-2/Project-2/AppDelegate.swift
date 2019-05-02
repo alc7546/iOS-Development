@@ -16,7 +16,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        loadData()
         return true
+    }
+    
+    // load data in from known json file named characterData
+    func loadData(){
+        guard let path = Bundle.main.url(forResource: "characters", withExtension: "json") else{
+            print("Error: could not find the characterData.json file")
+            return
+        }
+        
+        do{
+            let data = try Data(contentsOf: path)
+            if let json = try JSONSerialization.jsonObject(with: data) as? [String:Any?]{
+                parse(json:json)
+            }
+        } catch {
+            print("Error: could not initialize the json data: \(error)")
+        }
+    }
+    
+    // Parse out the JSON from the characterData file
+    func parse(json: [String:Any]){
+        var characters = [Character]()
+        
+        // If a json object with the characters key exists, assign it to this array
+        guard let charactersArrayJSON = json["characters"] as? [AnyObject] else{
+            print("Error: Could not find the 'characters' key")
+            return
+        }
+        
+        // Check each object in json file
+        for character in charactersArrayJSON{
+            // File is specifically laid out, will be parsed in order it is laid out
+            let name = character["name"] as? String ?? "No Name" // grab name
+            
+            // Grab the bio as a String
+            let bio = character["bio"] as? String ?? "No Available Bio"
+            
+            // Grab main image as a String
+            let mainImageString = character["mainImage"] as? String ?? "PlaceHolder Image"
+            // Convert string image to UIImage
+            let mainImage = UIImage(named: mainImageString)
+            
+            let newCharacter = Character(name: name, bio: bio, mainImage: (mainImage)!)
+            characters.append(newCharacter)
+            print(newCharacter)
+        }
+        Roster.shared.characters = characters
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

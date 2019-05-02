@@ -17,6 +17,10 @@
 		3CCFAD4722655E3600F513EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CCFAD4522655E3600F513EE /* LaunchScreen.storyboard */; };
 		3CCFAD5322656A3800F513EE /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFAD5222656A3800F513EE /* MyCollectionViewCell.swift */; };
 		3CCFAD57226570B700F513EE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFAD56226570B700F513EE /* DetailsViewController.swift */; };
+		3CD09355227ABF5B00DA449E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD09354227ABF5B00DA449E /* Character.swift */; };
+		3CD09357227ABFE000DA449E /* Roster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD09356227ABFE000DA449E /* Roster.swift */; };
+		3CD0935A227AC2EC00DA449E /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CD09351227ABD6200DA449E /* characters.json */; };
+		3CD0935C227AC92300DA449E /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0935B227AC92300DA449E /* NavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		3CCFAD4822655E3600F513EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CCFAD5222656A3800F513EE /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CCFAD56226570B700F513EE /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3CD09351227ABD6200DA449E /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		3CD09354227ABF5B00DA449E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		3CD09356227ABFE000DA449E /* Roster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roster.swift; sourceTree = "<group>"; };
+		3CD0935B227AC92300DA449E /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				3C9C243E226E9AE300C70118 /* TestModel.swift */,
+				3CD09354227ABF5B00DA449E /* Character.swift */,
+				3CD09356227ABFE000DA449E /* Roster.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,6 +104,8 @@
 				3C9C243D226E9AD800C70118 /* Model */,
 				3CCFAD5022656A0800F513EE /* Controllers */,
 				3CCFAD4F22656A0400F513EE /* Views */,
+				3CD09350227ABBA700DA449E /* Data */,
+				3CD0935B227AC92300DA449E /* NavController.swift */,
 				3CCFAD4022655E3600F513EE /* Main.storyboard */,
 				3CCFAD4322655E3600F513EE /* Assets.xcassets */,
 				3CCFAD4522655E3600F513EE /* LaunchScreen.storyboard */,
@@ -117,6 +129,14 @@
 				3CCFAD56226570B700F513EE /* DetailsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3CD09350227ABBA700DA449E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3CD09351227ABD6200DA449E /* characters.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +201,7 @@
 				3C9C2442226EA14D00C70118 /* SevenElevenSerif.otf in Resources */,
 				3CCFAD4722655E3600F513EE /* LaunchScreen.storyboard in Resources */,
 				3CCFAD4422655E3600F513EE /* Assets.xcassets in Resources */,
+				3CD0935A227AC2EC00DA449E /* characters.json in Resources */,
 				3CCFAD4222655E3600F513EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,11 +213,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CD09355227ABF5B00DA449E /* Character.swift in Sources */,
 				3CCFAD3F22655E3600F513EE /* ViewController.swift in Sources */,
 				3CCFAD3D22655E3600F513EE /* AppDelegate.swift in Sources */,
 				3C9C243F226E9AE300C70118 /* TestModel.swift in Sources */,
 				3C9C2447226EB14C00C70118 /* CALayer.swift in Sources */,
+				3CD0935C227AC92300DA449E /* NavController.swift in Sources */,
 				3CCFAD5322656A3800F513EE /* MyCollectionViewCell.swift in Sources */,
+				3CD09357227ABFE000DA449E /* Roster.swift in Sources */,
 				3CCFAD57226570B700F513EE /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

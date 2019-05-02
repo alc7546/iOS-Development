@@ -13,9 +13,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"]
+    var roster:Roster!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(roster.characters.count)
+    }
     // MARK: - UICollectionViewDataSource protocol
+    
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,6 +50,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetailsSegue"{
+            
             let detailsVC = segue.destination as! DetailsViewController
             let cell = sender as! MyCollectionViewCell
             detailsVC.titleText = TestModel.test.name
