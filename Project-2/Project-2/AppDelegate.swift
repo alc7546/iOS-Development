@@ -60,7 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Convert string image to UIImage
             let mainImage = UIImage(named: mainImageString)
             
-            let newCharacter = Character(name: name, bio: bio, mainImage: (mainImage)!)
+            // Grab Roster Icon as a String
+            let rosterIconString = character["icon"] as? String ?? "PlaceHolder Icon"
+            let rosterIcon = UIImage(named: rosterIconString)
+            let newCharacter = Character(name: name, bio: bio, mainImage: (mainImage)!, rosterIcon: (rosterIcon)!)
             characters.append(newCharacter)
             print(newCharacter)
         }

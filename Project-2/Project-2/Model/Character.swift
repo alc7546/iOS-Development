@@ -11,21 +11,22 @@ import UIKit
 
 
 public class Character: NSObject{
-    private var name: String
-    private var bio:String
-    private var mainImage:UIImage // try as an image first
+    private(set) var name: String
+    private(set) var bio:String
+    private(set) var mainImage:UIImage // try as an image first
+    private(set) var rosterIcon:UIImage
     
-    public var charName:String?{
-        return name
-    }
     
-    init(name:String, bio:String, mainImage:UIImage){
+
+    
+    init(name:String, bio:String, mainImage:UIImage, rosterIcon:UIImage){
         self.name = name
         self.bio = bio
         self.mainImage = mainImage
+        self.rosterIcon = rosterIcon
     }
     
     public override var description: String{
-        return "\(name) \(bio) \(mainImage)"
+        return "\(name) \(bio) \(mainImage) \(rosterIcon)"
     } 
 }

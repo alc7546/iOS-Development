@@ -19,6 +19,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black
+        collectionView.backgroundColor = UIColor.clear
         print(roster.characters.count)
     }
     // MARK: - UICollectionViewDataSource protocol
@@ -36,8 +38,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.myLabel.text = self.items[indexPath.item]
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        print(roster.characters)
+        cell.backgroundColor = UIColor(patternImage: roster.characters[indexPath.row].rosterIcon) // make cell more visible in our example project
         
         
         return cell
@@ -49,7 +51,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
         selectedCell = indexPath.item
-        print(selectedCell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,12 +59,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             let detailsVC = segue.destination as! DetailsViewController
             let cell = sender as! MyCollectionViewCell
             let path = self.collectionView.indexPath(for: cell)?.item
-            print(path)
-            detailsVC.titleText = roster.characters[path!].charName!
-            detailsVC.image = TestModel.test.mainImage
-            detailsVC.bioText = TestModel.test.bio
+            detailsVC.titleText = roster.characters[path!].name
+            detailsVC.image = roster.characters[path!].mainImage
+            detailsVC.bioText = roster.characters[path!].bio
             print("succeeded")
-            print(cell.myLabel.text!)
+            
         }
     }
 }

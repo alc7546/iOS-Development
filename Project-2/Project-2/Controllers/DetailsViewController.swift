@@ -29,8 +29,8 @@ class DetailsViewController: UIViewController {
         bio.numberOfLines = 0;
         bio.sizeToFit()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "CharacterBackground"))
-        self.bio.layer.addBorder(edge: UIRectEdge.top, color: UIColor.yellow, thickness: 0.5)
-        self.bio.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.yellow, thickness: 0.5)
+        self.bio.layer.addBorder(edge: UIRectEdge.top, color: UIColor(red: 242/255, green: 220/255, blue: 58/255, alpha: 1), thickness: 0.5)
+        
         // Do any additional setup after loading the view.
     }
 

@@ -1,10 +1,155 @@
 {
 	"characters": [
-		{
-			"name": "Erron Black",
-            "bio": "The best shot in Texas left home to seek adventure and excitement in Outworld with Kano and the Black Dragon. Outworld turned out to be the playground of Erron's ultraviolent dreams. He decided to make his home there as the dealiest outlander in Outworld.",
-			"mainImage": "ErronBlack"
-            
-		}
+                   {
+                   "name": "Shao Kahn",
+                   "bio": "Emperor of Outworld. For millennia, Shao Kahn dominated the realms, rapidly expanding his Empire by conquest. But when he set out to claim Earthrealm, he was blocked by the rules of Mortal Kombat. Deterred but determined, Shao Kahn demands absolute victory.",
+                   "mainImage": "ShaoKahn",
+                   "icon": "ShaoKahnIcon"
+                   },
+                   {
+                   "name":"Frost",
+                   "bio":"Grandmaster Sub-Zero’s most dangerous apprentice. When Sub-Zero made historic peace with his clan’s enemy, Scorpion, defiant Frost challenged her Grandmaster as unfit to lead. Sub-Zero defeated and banished Frost. For years, she sought the power to destroy him. Now she has it.",
+                   "mainImage":"Frost",
+                   "icon":"FrostIcon"
+                   },
+                   {
+                   "name":"Johnny Cage",
+                   "bio": "B-list celebrity, recipient of no acting awards. Following a string of lowbrow direct-to- VHS sequels to Ninja Mime , Johnny Cage’s career peaked at the age of 28. Now, he fights against all odds to save Earthrealm and prove that he’s an even braver hero in real life than on the silver screen.",
+                   "mainImage":"JohnnyCage",
+                   "icon":"JohnnyCageIcon"
+                   },
+                   {
+                   "name":"Sonya Blade",
+                   "bio": "Decorated officer of the Special Forces. Sonya braved the Mortal Kombat tournament, defended Earthrealm, and rescued her partner, Jax Briggs. Serious to a fault, she never takes time for personal leave, preferring to remain vigilant until all realms are safe from conquest.",
+                   "mainImage":"SonyaCage",
+                   "icon":"SonyaCageIcon"
+                   },
+                   {
+                   "name":"Cassie Cage",
+                   "bio":"The offspring of Johnny Cage and Sonya Blade laid the smackdown on Shinnok a few years back, but even that wasn't enough to escape the shadow of her legendary parents. Whenever Cassie isn't defending Earthrealm, she's fighting to prove worthy of their legacy",
+                   "mainImage":"CassieCage",
+                   "icon":"CassieCageIcon"
+                   },
+                   {
+                   "name":"Jax Briggs",
+                   "bio": "Cyber-enhanced officer of the Special Forces. Jax Briggs lost both arms in the line of duty, but he came back to the battlefield twice as strong thanks to cybernetic upgrades. Even with that power, Jax’s sacrifices burden him. He soldiers onward, honorbound to protect Earthrealm.",
+                   "mainImage":"Jax",
+                   "icon":"JaxIcon"
+                   },
+                   {
+                   "name":"Scorpion",
+                   "bio": "Grandmaster Scorpion of the Shirai Ryu. Driven by rage, Hanzo Hasashi went through Hell and back to avenge his family and clan, never resting until he cut down their murderer, Quan Chi. Now he leads a reborn Shirai Ryu, avenging those who cannot avenge themselves.",
+                   "mainImage":"Scorpion",
+                   "icon":"ScorpionIcon"
+                   },
+                   {
+                   "name": "Noob Saibot",
+                   "bio":"Shadow of the Netherrealm. In life, Noob Saibot was known as Sub-Zero. Unjustly murdered by Scorpion, he was resurrected by Quan Chi and granted power over darkness, but as Quan Chi’s slave. Now, Quan Chi is dead. Noob Saibot is finally free to reclaim the honor that was stolen from him.",
+                   "mainImage":"Noob",
+                   "icon":"NoobIcon"
+                   },
+                   {
+                   "name": "Baraka",
+                   "bio": "War Chief of the nomadic Tarkatan tribe, a carnivorous people considered subhuman by the Outworld Empire. Baraka dutifully serves Shao Kahn to preserve his tribe's way of life, who roam the harsh Wastelands, meat carts in tow, consuming everything and everyone in their path.",
+                   "mainImage":"Baraka",
+                   "icon": "BarakaIcon"
+                   },
+                   {
+                   "name": "Raiden",
+                   "bio":"Immortal God of Thunder, Protector of Earthrealm. Raiden has saved Earthrealm time and again by rallying the bravest and strongest warriors of the day to defend it. After centuries of kombat and bloodshed, he fears unintended consequences for humanity, and himself.",
+                   "mainImage":"Raiden",
+                   "icon":"RaidenIcon"
+                   },
+                   {
+                   "name": "Jacqui Briggs",
+                   "bio": "The daughter of Jax Briggs. Jacqui defied her father when she joined the Special Forces. Seeing what he sacrificed as a soldier didn't scare her. It stirred a desire to protect her family and her homeland. She hustles hard and punches above her weight, proudly carrying on the Briggs legacy.",
+                   "mainImage": "Jacqui",
+                   "icon":"JacquiIcon"
+                   },
+                   {
+                   "name": "Subzero",
+                   "bio": "Grandmaster of the Lin Kuei clan. Kuai Liang beat death to redeem his clan for the evil committed by Sektor and the Cyber Lin Kuei. He rebuilt the Lin Kuei and brokered peace with their Shirai Ryu rivals. Now, he hopes to finally close the book on sins of Lin Kuei past.",
+                   "mainImage":"Subzero",
+                   "icon":"SubzeroIcon"
+                   },
+                   {
+                   "name": "Kano",
+                   "bio": "Arms dealer and leader of the Black Dragon. Kano prides himself as the ultimate deal- maker, with a black market network that spans the realms, but he is never satisfied. Even his loyal followers know he'd stab his mother in the back if the price was right.",
+                   "mainImage":"Kano",
+                   "icon":"KanoIcon"
+                   },
+                   {
+                   "name": "Kabal",
+                   "bio": "Fleet-footed Black Dragon enforcer. Kabal's sprinting speed is only outpaced by his greed. He was a rookie cop until Kano tempted him to sell out his police department for cash money and a spot in the Black Dragon. Kabal has run down anyone who's crossed Kano ever since.",
+                   "mainImage":"Kabal",
+                   "icon":"KabalIcon"
+                   },
+                   {
+                   "name":"Liu Kang",
+                   "bio": "Shaolin monk and Champion of Earthrealm. Liu Kang was an orphan adopted and trained in the arts of kombat by the Shaolin order. He honored them by defeating Shang Tsung in Mortal Kombat and saving Earthrealm as 'the Chosen One', a title that weighs heavy on his shoulders.",
+                   "mainImage":"LiuKang",
+                   "icon":"LiuKangIcon"
+                   },
+                   {
+                   "name":"Kitana",
+                   "bio":"10,000-year-old assassin and Princess of Outworld. Shao Kahn married Kitana’s mother and raised Kitana as his loyal heir, concealing the truth that he murdered her father to conquer Edenia. Now that this truth is out, Kitana is on a quest to avenge her father’s name.",
+                   "mainImage":"Kitana",
+                   "icon":"KitanaIcon"
+                   },
+                   {
+                   "name":"Kung Lao",
+                   "bio": "Shaolin monk and descendant of Great Kung Lao. The younger Kung Lao claimed his greatness by beating the deadly alliance of Shang Tsung and Quan Chi in Mortal Kombat. Reckless and rebellious, but courageous and indomitable, Kung Lao fights to prove worthy of his glorious ancestors.",
+                   "mainImage":"KungLao",
+                   "icon":"KungLaoIcon"
+                   },
+                   {
+                   "name":"Jade",
+                   "bio": "Stealth assassin and Imperial Bodyguard. Jade's family traded her to Shao Kahn as a child. Though he was the only 'parent' and master she ever knew, Jade refused his orders to kill her closest friend, Kitana. The Emperor turned against Jade. Now she vows to end his reign.",
+                   "mainImage":"Jade",
+                   "icon":"JadeIcon"
+                   },
+                   {
+                   "name":"Skarlet",
+                   "bio": "Blood mage and Imperial Bodyguard. Skarlet was a starving wretch before Shao Kahn anointed her in blood. Reborn by his sorcery with an insatiable bloodlust and the power to feed it, her crimson cravings are rivaled by her desire for Shao Kahn’s praise. She is his deadliest, most faithful creation.",
+                   "mainImage":"Skarlet",
+                   "icon":"SkarletIcon"
+                   },
+                   {
+                   "name": "Erron Black",
+                   "bio": "The best shot in Texas left home to seek adventure and excitement in Outworld with Kano and the Black Dragon. Outworld turned out to be the playground of Erron's ultraviolent dreams. He decided to make his home there as the dealiest outlander in Outworld.",
+                   "mainImage": "ErronBlack",
+                   "icon": "ErronBlackIcon"
+                   },
+                   {
+                   "name": "D'vorah",
+                   "bio": "One among many Kytinn, a swarm of sentient insects who share a hive mind. D'vorah has served Shao Kahn, Kotal Kahn, and Shinnok, but her true allegiance is to the swarm. She lies, cheats, and backstabs so that when everyone else has died, the Kytinn hive will survive.",
+                   "mainImage":"Dvorah",
+                   "icon":"DvorahIcon"
+                   },
+                   {
+                   "name":"Kotal Kahn",
+                   "bio": "Osh-Tekk warrior and Emperor of Outworld. Years ago, Kotal saved the Empire from chaos and claimed the throne of Kahn. Now his reign is plagued by rising tensions at home and abroad. Determined to keep order, Kotal wrestles with the temptation to exercise the same brutal tactics as his predecessors.",
+                   "mainImage":"KotalKahn",
+                   "icon":"KotalKahnIcon"
+                   },
+                   {
+                   "name":"Geras",
+                   "bio": "An artificial construct, built by Kronika, he faithfully serves her goal of restarting time and rewriting history. By Kronika’s design, Geras exists as a fixed point in time. Every time Geras is killed he is reborn, each time becoming more resilient against the manner of his death.",
+                   "mainImage":"Geras",
+                   "icon":"GerasIcon"
+                   },
+                   {
+                   "name":"Kollector",
+                   "bio": "Tribute collector for the Outworld Empire. Born into poverty, the Kollector seized his imperial collections duty with a zeal that impressed Shao Kahn. He stole riches from Outworld’s people, rewarding himself with wealth and status in turn. He’ll kill anyone to keep it.",
+                   "mainImage":"Kollector",
+                   "icon":"KollectorIcon"
+                   },
+                   {
+                   "name":"Cetrion",
+                   "bio":"Elder Goddess of Virtue, Guardian of Life. When Shinnok threatened to conquer the Elder Gods, Cetrion cast him into the Netherrealm. Her blessings answer the prayers of warriors battling against darkness. But at times, the heroic virtues she upholds are at odds with her quest for universal balance.",
+                   "mainImage":"Cetrion",
+                   "icon":"CetrionIcon"
+                   }
+                   
 	]
 }
